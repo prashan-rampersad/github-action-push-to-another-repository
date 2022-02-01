@@ -81,7 +81,12 @@ echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to fold
 cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/_repositories/$SOURCE_REPOSITORY_NAME/$TARGET_DIRECTORY"
 
 echo "[+] cp $SOURCE_DIRECTORY /architecture.yml $CLONE_DIR/_data/repositories/$SOURCE_REPOSITORY_NAME.yml"
-cp "$SOURCE_DIRECTORY"/architecture.md "$CLONE_DIR/_data/repositories/$SOURCE_REPOSITORY_NAME.yml"
+
+if [ -f "$SOURCE_DIRECTORY"/architecture.yml ]
+then
+   cp "$SOURCE_DIRECTORY"/architecture.yml "$CLONE_DIR/_data/repositories/$SOURCE_REPOSITORY_NAME.yml"
+fi
+   
 cd "$CLONE_DIR"
 
 echo "[+] Files that will be pushed"
