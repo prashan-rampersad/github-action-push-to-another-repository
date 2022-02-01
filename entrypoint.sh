@@ -79,6 +79,8 @@ fi
 
 echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
 cp -ra "$SOURCE_DIRECTORY"/. "$CLONE_DIR/_repositories/$SOURCE_REPOSITORY_NAME/$TARGET_DIRECTORY"
+
+echo "[+] cp $SOURCE_DIRECTORY /architecture.yml $CLONE_DIR/_data/repositories/$SOURCE_REPOSITORY_NAME.yml"
 cp "$SOURCE_DIRECTORY"/architecture.yml "$CLONE_DIR/_data/repositories/$SOURCE_REPOSITORY_NAME.yml"
 cd "$CLONE_DIR"
 
